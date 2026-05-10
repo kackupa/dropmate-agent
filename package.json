@@ -5,23 +5,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "smoke": "tsx src/smoke.ts",
-    "mcp": "tsx src/mcp.ts",
-    "api": "tsx src/http.ts",
-    "dropSmoke": "tsx src/dropSmoke.ts",
-    "dropApi": "tsx src/dropHttp.ts",
-    "dropMcp": "tsx src/dropMcp.ts",
-    "darkdropSmoke": "tsx src/darkdropSmoke.ts",
-    "darkdropRelayerSmoke": "tsx src/darkdropRelayerSmoke.ts",
-    "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts",
-    "createRealDrop": "tsx src/createRealDrop.ts",
-    "claimRealDrop": "tsx src/claimRealDrop.ts",
     "realApi": "tsx src/darkdropHttp.ts",
     "realMcp": "tsx src/realDarkdropMcp.ts",
-    "realMcpSmoke": "tsx src/realMcpSmoke.ts"
+    "realMcpSmoke": "tsx src/realMcpSmoke.ts",
+    "privacyAudit": "tsx src/privacyAudit.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
