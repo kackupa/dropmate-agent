@@ -10,7 +10,9 @@
     "start": "node dist/index.js",
     "smoke": "tsx src/smoke.ts",
     "mcp": "tsx src/mcp.ts",
-    "api": "tsx src/http.ts"
+    "api": "tsx src/http.ts",
+    "dropSmoke": "tsx src/dropSmoke.ts",
+    "dropApi": "tsx src/dropHttp.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
