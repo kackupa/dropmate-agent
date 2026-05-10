@@ -15,7 +15,8 @@
     "dropApi": "tsx src/dropHttp.ts",
     "dropMcp": "tsx src/dropMcp.ts",
     "darkdropSmoke": "tsx src/darkdropSmoke.ts",
-    "darkdropRelayerSmoke": "tsx src/darkdropRelayerSmoke.ts"
+    "darkdropRelayerSmoke": "tsx src/darkdropRelayerSmoke.ts",
+    "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
