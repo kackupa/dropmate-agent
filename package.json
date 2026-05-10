@@ -18,7 +18,8 @@
     "darkdropRelayerSmoke": "tsx src/darkdropRelayerSmoke.ts",
     "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts",
     "createRealDrop": "tsx src/createRealDrop.ts",
-    "claimRealDrop": "tsx src/claimRealDrop.ts"
+    "claimRealDrop": "tsx src/claimRealDrop.ts",
+    "realApi": "tsx src/darkdropHttp.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
