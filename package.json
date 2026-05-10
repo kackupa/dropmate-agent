@@ -20,7 +20,8 @@
     "createRealDrop": "tsx src/createRealDrop.ts",
     "claimRealDrop": "tsx src/claimRealDrop.ts",
     "realApi": "tsx src/darkdropHttp.ts",
-    "realMcp": "tsx src/realDarkdropMcp.ts"
+    "realMcp": "tsx src/realDarkdropMcp.ts",
+    "realMcpSmoke": "tsx src/realMcpSmoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
