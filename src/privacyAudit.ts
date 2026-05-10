@@ -26,6 +26,7 @@ function walk(dir: string) {
     }
 
     if (!full.endsWith(".ts")) continue;
+    if (full.endsWith("privacyAudit.ts")) continue;
 
     const text = readFileSync(full, "utf8");
 

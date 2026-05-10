@@ -9,7 +9,8 @@
     "realApi": "tsx src/darkdropHttp.ts",
     "realMcp": "tsx src/realDarkdropMcp.ts",
     "realMcpSmoke": "tsx src/realMcpSmoke.ts",
-    "privacyAudit": "tsx src/privacyAudit.ts"
+    "privacyAudit": "tsx src/privacyAudit.ts",
+    "duplicateClaimSmoke": "tsx src/duplicateClaimSmoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
