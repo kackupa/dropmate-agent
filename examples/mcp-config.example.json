@@ -3,7 +3,7 @@
     "darkdrop-agents": {
       "command": "npx",
       "args": ["tsx", "src/realDarkdropMcp.ts"],
-      "cwd": "/home/darkdrop-agents",
+      "cwd": "../darkdrop-agents",
       "env": {
         "SOLANA_RPC_URL": "https://api.devnet.solana.com",
         "DARKDROP_RELAYER_URL": "http://localhost:3001",

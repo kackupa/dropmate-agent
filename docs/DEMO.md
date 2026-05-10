@@ -5,14 +5,14 @@
 Terminal 1:
 
 ```bash
-cd /home/darkdropv4/relayer
+cd ../darkdropv4/relayer
 npm run dev
 ```
 
 Terminal 2:
 
 ```bash
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run realApi
 ```
 
@@ -21,21 +21,21 @@ npm run realApi
 Terminal 3:
 
 ```bash
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run launchDemo
 ```
 
 ## Run duplicate-claim test
 
 ```bash
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run duplicateClaimSmoke
 ```
 
 ## Run privacy audit
 
 ```bash
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run privacyAudit
 ```
 

@@ -60,17 +60,17 @@ DarkDrop Agents may store:
 
 Terminal 1:
 
-cd /home/darkdropv4/relayer
+cd ../darkdropv4/relayer
 npm run dev
 
 Terminal 2:
 
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run realApi
 
 Terminal 3:
 
-cd /home/darkdrop-agents
+cd ../darkdrop-agents
 npm run realMcpSmoke
 
 ## HTTP API
@@ -107,3 +107,71 @@ read -r -s -p "Paste claim code: " CLAIM_CODE
 ## Warning
 
 This is devnet alpha software. Do not use on mainnet until the protocol, relayer, claim-code handling, and deployment model have been reviewed.
+
+---
+
+## New user quickstart
+
+### Clone both repos
+
+```bash
+git clone https://github.com/hitman-kai/darkdropv4.git
+git clone https://github.com/kackupa/darkdrop-agents.git
+cd darkdrop-agents
+npm install
+cp .env.example .env
+```
+
+### Start with Docker
+
+```bash
+docker compose -f docker-compose.devnet.yml up --build
+```
+
+Then check:
+
+```bash
+curl http://localhost:3001/health
+curl http://localhost:8790/darkdrop/health
+```
+
+### Start manually
+
+Terminal 1:
+
+```bash
+cd ../darkdropv4/relayer
+npm install
+npm run dev
+```
+
+Terminal 2:
+
+```bash
+cd ../darkdrop-agents
+npm run realApi
+```
+
+Terminal 3:
+
+```bash
+cd ../darkdrop-agents
+npm run launchDemo
+```
+
+## Documentation index
+
+- `docs/DEMO.md` — demo commands
+- `docs/DEVNET_ALPHA.md` — devnet alpha checklist
+- `docs/MCP_SETUP.md` — MCP setup
+- `docs/SAFETY_NOTES.md` — safety notes and production gaps
+- `docs/WORKING_LIST.md` — roadmap, including agent-to-human and agent-to-agent delivery
+- `openapi.yaml` — HTTP API spec
+
+## Important dependency
+
+DarkDrop Agents currently depends on the DarkDrop relayer from:
+
+https://github.com/hitman-kai/darkdropv4
+
+For production use, this dependency should be version-pinned and reviewed.
