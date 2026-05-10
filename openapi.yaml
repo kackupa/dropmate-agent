@@ -8,13 +8,13 @@ servers:
 paths:
   /darkdrop/health:
     get:
-      summary: Check DarkDrop Agents and relayer health
+      summary: Check health
       responses:
         "200":
           description: Health response
   /darkdrop/create:
     post:
-      summary: Create a real DarkDrop drop
+      summary: Create a DarkDrop drop
       description: Returns a claim code once. The claim code must not be stored.
       requestBody:
         required: true
@@ -33,7 +33,7 @@ paths:
                   example: 0.005
       responses:
         "200":
-          description: Drop created. Includes claimCode returned once only.
+          description: Drop created
   /darkdrop/claim:
     post:
       summary: Claim a DarkDrop drop
@@ -58,7 +58,7 @@ paths:
                   description: Optional Solana wallet address to receive funds.
       responses:
         "200":
-          description: Drop claimed and withdrawn.
+          description: Drop claimed and withdrawn
   /darkdrop/events:
     get:
       summary: List metadata-only audit events
