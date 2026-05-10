@@ -1,0 +1,36 @@
+services:
+  darkdrop-relayer:
+    build:
+      context: ../darkdropv4/relayer
+    ports:
+      - "3001:3001"
+    environment:
+      RPC_URL: "https://api.devnet.solana.com"
+      RELAYER_KEYPAIR: "/root/.config/solana/relayer.json"
+      FEE_RATE_BPS: "50"
+      CORS_ORIGIN: "http://localhost:3000"
+      PORT: "3001"
+    volumes:
+      - ${HOME}/.config/solana:/root/.config/solana:ro
+
+  dropmate-agent:
+    build:
+      context: .
+    ports:
+      - "8790:8790"
+    depends_on:
+      - darkdrop-relayer
+    environment:
+      SOLANA_RPC_URL: "https://api.devnet.solana.com"
+      DARKDROP_RELAYER_URL: "http://darkdrop-relayer:3001"
+      DARKDROP_ENABLED: "true"
+      DARKDROP_MAX_DROP_SOL: "0.05"
+      DARKDROP_DAILY_LIMIT_SOL: "0.25"
+      DARKDROP_AGENT_PORT: "8790"
+      DARKDROP_RELAYER_FEE_BPS: "50"
+      DATABASE_PATH: "./data/dropmate-agent.sqlite"
+      RATE_LIMIT_WINDOW_MS: "60000"
+      RATE_LIMIT_MAX_REQUESTS: "20"
+      DROPMATE_API_KEY: ""
+    volumes:
+      - ./data:/app/data
