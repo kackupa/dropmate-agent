@@ -11,6 +11,12 @@ import {
 } from "@solana/web3.js";
 import { createDarkdropViaRelayer } from "./darkdrop/relayer-create.js";
 import { claimDarkdropViaRelayer } from "./darkdrop/relayer-claim.js";
+import { config } from "./config.js";
+import {
+  getCreatedTotalTodaySol,
+  recordDarkdropClaim,
+  recordDarkdropCreate
+} from "./darkdropAudit.js";
 
 const RPC_URL = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
 const RELAYER_URL = process.env.DARKDROP_RELAYER_URL || "http://localhost:3001";
@@ -53,8 +59,25 @@ export async function createRealDarkdrop(input: {
     throw new Error("creatorId is required.");
   }
 
+  if (!config.darkdropEnabled) {
+    throw new Error("DarkDrop actions are disabled by DARKDROP_ENABLED=false.");
+  }
+
   if (!Number.isFinite(input.amountSol) || input.amountSol <= 0) {
     throw new Error("amountSol must be greater than 0.");
+  }
+
+  if (input.amountSol > config.darkdropMaxDropSol) {
+    throw new Error(
+      `Drop blocked: amount ${input.amountSol} SOL exceeds max drop size ${config.darkdropMaxDropSol} SOL.`
+    );
+  }
+
+  const createdToday = getCreatedTotalTodaySol();
+  if (createdToday + input.amountSol > config.darkdropDailyLimitSol) {
+    throw new Error(
+      `Drop blocked: daily create limit would be exceeded. Used ${createdToday} SOL of ${config.darkdropDailyLimitSol} SOL.`
+    );
   }
 
   const rpcUrl = input.rpcUrl || RPC_URL;
@@ -94,6 +117,13 @@ export async function createRealDarkdrop(input: {
     relayerUrl,
     rpcUrl,
     cluster: "devnet"
+  });
+
+  recordDarkdropCreate({
+    actorId: input.creatorId,
+    amountSol: input.amountSol,
+    depositTx,
+    createdTxSignature: created.drop.createdTxSignature
   });
 
   return {
@@ -137,6 +167,13 @@ export async function claimRealDarkdrop(input: {
     claimCode: input.claimCode,
     recipientAddress,
     relayerUrl: input.relayerUrl || RELAYER_URL
+  });
+
+  recordDarkdropClaim({
+    actorId: input.claimerId,
+    amountSol: Number(result.amountLamports) / LAMPORTS_PER_SOL,
+    claimTxSignature: result.claimTxSignature,
+    withdrawTxSignature: result.withdrawTxSignature
   });
 
   return {

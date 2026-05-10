@@ -10,5 +10,8 @@ export const config = {
   solanaCluster: process.env.SOLANA_CLUSTER || "devnet",
   solanaRpcUrl: process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com",
   darkdropRelayerUrl: process.env.DARKDROP_RELAYER_URL || "",
-  darkdropProgramId: process.env.DARKDROP_PROGRAM_ID || ""
+  darkdropProgramId: process.env.DARKDROP_PROGRAM_ID || "",
+  darkdropEnabled: (process.env.DARKDROP_ENABLED || "true").toLowerCase() === "true",
+  darkdropMaxDropSol: Number(process.env.DARKDROP_MAX_DROP_SOL || "0.05"),
+  darkdropDailyLimitSol: Number(process.env.DARKDROP_DAILY_LIMIT_SOL || "0.25")
 };
