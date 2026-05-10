@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "dropmate-real-darkdrop": {
+      "command": "npx",
+      "args": ["tsx", "src/realDarkdropMcp.ts"],
+      "cwd": "/home/dropmate-agent",
+      "env": {
+        "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+        "DARKDROP_RELAYER_URL": "http://localhost:3001",
+        "DARKDROP_ENABLED": "true",
+        "DARKDROP_MAX_DROP_SOL": "0.05",
+        "DARKDROP_DAILY_LIMIT_SOL": "0.25"
+      }
+    }
+  }
+}
