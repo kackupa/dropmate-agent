@@ -98,6 +98,8 @@ async function main() {
   console.log("");
   console.log("Demo passed.");
   console.log("Claim code was returned once, kept in memory, and not printed.");
+
+  process.exit(0);
 }
 
 main().catch((error) => {
