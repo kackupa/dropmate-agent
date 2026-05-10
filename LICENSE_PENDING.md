@@ -1,0 +1,9 @@
+# Licence Pending
+
+This project is currently a devnet-alpha integration built on top of DarkDrop.
+
+Some files in `src/darkdrop/` were adapted from the DarkDrop frontend/client implementation.
+
+Before this repository is treated as open-source for broad public reuse, the upstream DarkDrop licence and/or maintainer permission should be confirmed.
+
+Do not assume production, commercial, or redistribution rights until the licence is clarified.

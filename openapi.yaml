@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: DarkDrop Agents API
+  version: 0.3.0
+  description: Devnet-alpha API for AI agents to create and claim DarkDrop claim-code drops without storing claim codes.
+servers:
+  - url: http://localhost:8790
+paths:
+  /darkdrop/health:
+    get:
+      summary: Check DarkDrop Agents and relayer health
+      responses:
+        "200":
+          description: Health response
+  /darkdrop/create:
+    post:
+      summary: Create a real DarkDrop drop
+      description: Returns a claim code once. The claim code must not be stored.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amountSol
+              properties:
+                creatorId:
+                  type: string
+                  example: agent_a
+                amountSol:
+                  type: number
+                  example: 0.005
+      responses:
+        "200":
+          description: Drop created. Includes claimCode returned once only.
+  /darkdrop/claim:
+    post:
+      summary: Claim a DarkDrop drop
+      description: Uses the claim code in memory only and does not store it.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - claimCode
+              properties:
+                claimerId:
+                  type: string
+                  example: agent_b
+                claimCode:
+                  type: string
+                  description: DarkDrop claim code. Bearer secret.
+                recipientAddress:
+                  type: string
+                  description: Optional Solana wallet address to receive funds.
+      responses:
+        "200":
+          description: Drop claimed and withdrawn.
+  /darkdrop/events:
+    get:
+      summary: List metadata-only audit events
+      description: Does not return claim codes or secrets.
+      responses:
+        "200":
+          description: Metadata-only event list
