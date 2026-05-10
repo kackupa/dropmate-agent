@@ -107,7 +107,7 @@ const server = createServer(async (req, res) => {
 
     if (req.method === "GET" && url.pathname === "/darkdrop/health") {
       sendJson(res, 200, {
-        service: "dropmate-agent-real-darkdrop",
+        service: "darkdrop-agents-real-darkdrop",
         version: "0.3.0",
         relayer: await checkDarkdropRelayer(),
         safety: {
@@ -190,7 +190,7 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, "0.0.0.0", () => {
-  console.log(`DropMate Real DarkDrop API running on http://localhost:${PORT}`);
+  console.log(`DarkDrop Agents Real DarkDrop API running on http://localhost:${PORT}`);
   console.log("Endpoints:");
   console.log("  GET  /darkdrop/health");
   console.log("  GET  /darkdrop/events");

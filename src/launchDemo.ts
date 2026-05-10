@@ -12,7 +12,7 @@ function parseToolJson(result: any) {
 }
 
 async function main() {
-  console.log("DropMate Agent Devnet Alpha Demo");
+  console.log("DarkDrop Agents Devnet Alpha Demo");
   console.log("");
 
   const transport = new StdioClientTransport({

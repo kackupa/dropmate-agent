@@ -99,7 +99,7 @@ export async function createDarkdropViaRelayer(input: RelayCreateInput) {
       vaultAddress: vault.toBase58()
     },
     claimCode,
-    warning: "Claim code is returned once only. DropMate does not store plaintext claim codes.",
+    warning: "Claim code is returned once only. DarkDrop Agents does not store plaintext claim codes.",
     nextStep: "Send the claim code to the recipient through a separate secure channel."
   };
 }

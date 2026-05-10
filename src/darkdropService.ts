@@ -133,7 +133,7 @@ export async function createRealDarkdrop(input: {
     depositTx,
     drop: created.drop,
     claimCode: created.claimCode,
-    warning: "Claim code is returned once only. DropMate does not store plaintext claim codes.",
+    warning: "Claim code is returned once only. DarkDrop Agents does not store plaintext claim codes.",
     nextStep: "Send the claim code to the recipient through a separate secure channel."
   };
 }

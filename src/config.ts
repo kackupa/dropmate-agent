@@ -1,7 +1,7 @@
 import "dotenv/config";
 
 export const config = {
-  databasePath: process.env.DATABASE_PATH || "./data/dropmate-agent.sqlite",
+  databasePath: process.env.DATABASE_PATH || "./data/darkdrop-agents.sqlite",
   maxSinglePaymentSol: Number(process.env.MAX_SINGLE_PAYMENT_SOL || "0.25"),
   dailyLimitSol: Number(process.env.DAILY_LIMIT_SOL || "2"),
   approvalRequiredAboveSol: Number(process.env.APPROVAL_REQUIRED_ABOVE_SOL || "0.1"),

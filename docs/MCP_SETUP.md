@@ -1,6 +1,6 @@
 # MCP Setup
 
-DropMate Agent exposes real DarkDrop tools through MCP.
+DarkDrop Agents exposes real DarkDrop tools through MCP.
 
 ## Tools
 
@@ -18,13 +18,13 @@ examples/mcp-config.example.json
 
 Agent A calls create_darkdrop.
 
-DropMate creates a real DarkDrop drop and returns the claim code once.
+DarkDrop Agents creates a real DarkDrop drop and returns the claim code once.
 
 Agent A sends the claim code to Agent B through a separate secure channel.
 
 Agent B calls claim_darkdrop with the received claim code.
 
-DropMate uses the code in memory only, claims the drop, withdraws it, and does not store the code.
+DarkDrop Agents uses the code in memory only, claims the drop, withdraws it, and does not store the code.
 
 ## Privacy rule
 

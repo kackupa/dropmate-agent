@@ -1,7 +1,7 @@
 {
-  "name": "dropmate-agent",
-  "version": "0.1.0",
-  "description": "Agent-safe server for private Solana claim-code payment drafts.",
+  "name": "darkdrop-agents",
+  "version": "0.3.0",
+  "description": "MCP/API layer for AI agents to create and claim DarkDrop claim-code drops on Solana without storing claim codes.",
   "type": "module",
   "private": true,
   "scripts": {

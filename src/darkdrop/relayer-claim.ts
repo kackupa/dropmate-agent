@@ -71,7 +71,7 @@ export async function claimDarkdropViaRelayer(input: {
   const payload = decoded.payload;
 
   if (payload.flavor === "pool") {
-    throw new Error("Pool-flavored claim codes are not supported by DropMate Agent yet.");
+    throw new Error("Pool-flavored claim codes are not supported by DarkDrop Agents yet.");
   }
 
   if (!payload.pathSnapshot) {

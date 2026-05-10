@@ -13,7 +13,7 @@ services:
     volumes:
       - ${HOME}/.config/solana:/root/.config/solana:ro
 
-  dropmate-agent:
+  darkdrop-agents:
     build:
       context: .
     ports:
@@ -28,7 +28,7 @@ services:
       DARKDROP_DAILY_LIMIT_SOL: "0.25"
       DARKDROP_AGENT_PORT: "8790"
       DARKDROP_RELAYER_FEE_BPS: "50"
-      DATABASE_PATH: "./data/dropmate-agent.sqlite"
+      DATABASE_PATH: "./data/darkdrop-agents.sqlite"
       RATE_LIMIT_WINDOW_MS: "60000"
       RATE_LIMIT_MAX_REQUESTS: "20"
       DROPMATE_API_KEY: ""

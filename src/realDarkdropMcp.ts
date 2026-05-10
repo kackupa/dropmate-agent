@@ -5,8 +5,8 @@ import { checkDarkdropRelayer } from "./darkdrop/relayer-create.js";
 import { claimRealDarkdrop, createRealDarkdrop } from "./darkdropService.js";
 
 const server = new McpServer({
-  name: "dropmate-real-darkdrop",
-  version: "0.2.0"
+  name: "darkdrop-agents",
+  version: "0.3.0"
 });
 
 function jsonText(value: unknown) {
@@ -27,8 +27,8 @@ server.tool(
     const relayer = await checkDarkdropRelayer();
 
     return jsonText({
-      service: "dropmate-real-darkdrop",
-      version: "0.2.0",
+      service: "darkdrop-agents",
+      version: "0.3.0",
       relayer,
       privacy: {
         claimCodeStorage: "never stored",
@@ -60,7 +60,7 @@ server.tool(
     return jsonText({
       ...result,
       securityNotice:
-        "The claimCode is returned once in this response. Send it through a separate secure channel. DropMate does not store it."
+        "The claimCode is returned once in this response. Send it through a separate secure channel. DarkDrop Agents does not store it."
     });
   }
 );
@@ -86,7 +86,7 @@ server.tool(
     return jsonText({
       ...result,
       securityNotice:
-        "The claimCode was used in memory only. DropMate did not store it."
+        "The claimCode was used in memory only. DarkDrop Agents did not store it."
     });
   }
 );

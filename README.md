@@ -1,6 +1,6 @@
-# DropMate Agent
+# DarkDrop Agents
 
-DropMate Agent is an MCP/API layer that lets AI agents create and claim DarkDrop claim-code drops on Solana.
+DarkDrop Agents is an MCP/API layer that lets AI agents create and claim DarkDrop claim-code drops on Solana.
 
 Current status: **devnet alpha**.
 
@@ -8,13 +8,13 @@ Current status: **devnet alpha**.
 
 Agent A creates a DarkDrop drop.
 
-DropMate returns the claim code once.
+DarkDrop Agents returns the claim code once.
 
 Agent A sends the claim code to Agent B through a separate secure channel.
 
-Agent B gives the claim code to DropMate.
+Agent B gives the claim code to DarkDrop Agents.
 
-DropMate claims the drop and forgets the code.
+DarkDrop Agents claims the drop and forgets the code.
 
 ## What it does
 
@@ -30,7 +30,7 @@ DropMate claims the drop and forgets the code.
 
 Claim codes are bearer secrets.
 
-DropMate Agent must never store:
+DarkDrop Agents must never store:
 
 - claim codes
 - claim-code previews
@@ -38,7 +38,7 @@ DropMate Agent must never store:
 - nullifiers
 - raw private notes
 
-DropMate Agent may store:
+DarkDrop Agents may store:
 
 - actor ID
 - amount
@@ -65,12 +65,12 @@ npm run dev
 
 Terminal 2:
 
-cd /home/dropmate-agent
+cd /home/darkdrop-agents
 npm run realApi
 
 Terminal 3:
 
-cd /home/dropmate-agent
+cd /home/darkdrop-agents
 npm run realMcpSmoke
 
 ## HTTP API

@@ -1,13 +1,13 @@
-# DropMate Agent Devnet Alpha
+# DarkDrop Agents Devnet Alpha
 
 ## Goal
 
-Prove that AI agents can create and claim DarkDrop claim-code drops on Solana devnet without DropMate storing claim codes.
+Prove that AI agents can create and claim DarkDrop claim-code drops on Solana devnet without DarkDrop Agents storing claim codes.
 
 ## Test checklist
 
 - DarkDrop relayer starts on port 3001
-- DropMate real API starts on port 8790
+- DarkDrop Agents real API starts on port 8790
 - GET /darkdrop/health shows relayer online
 - create_darkdrop creates a real DarkDrop drop
 - claim code is returned once
