@@ -16,7 +16,9 @@
     "dropMcp": "tsx src/dropMcp.ts",
     "darkdropSmoke": "tsx src/darkdropSmoke.ts",
     "darkdropRelayerSmoke": "tsx src/darkdropRelayerSmoke.ts",
-    "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts"
+    "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts",
+    "createRealDrop": "tsx src/createRealDrop.ts",
+    "claimRealDrop": "tsx src/claimRealDrop.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
@@ -25,6 +27,7 @@
     "bs58": "^6.0.0",
     "circomlibjs": "^0.1.7",
     "dotenv": "^17.2.3",
+    "snarkjs": "^0.7.6",
     "zod": "^3.25.76"
   },
   "devDependencies": {
