@@ -13,12 +13,15 @@
     "api": "tsx src/http.ts",
     "dropSmoke": "tsx src/dropSmoke.ts",
     "dropApi": "tsx src/dropHttp.ts",
-    "dropMcp": "tsx src/dropMcp.ts"
+    "dropMcp": "tsx src/dropMcp.ts",
+    "darkdropSmoke": "tsx src/darkdropSmoke.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
     "@solana/web3.js": "^1.98.0",
     "better-sqlite3": "^12.4.6",
+    "bs58": "^6.0.0",
+    "circomlibjs": "^0.1.7",
     "dotenv": "^17.2.3",
     "zod": "^3.25.76"
   },
