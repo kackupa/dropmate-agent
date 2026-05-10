@@ -19,7 +19,8 @@
     "sendDevnetDeposit": "tsx src/sendDevnetDeposit.ts",
     "createRealDrop": "tsx src/createRealDrop.ts",
     "claimRealDrop": "tsx src/claimRealDrop.ts",
-    "realApi": "tsx src/darkdropHttp.ts"
+    "realApi": "tsx src/darkdropHttp.ts",
+    "realMcp": "tsx src/realDarkdropMcp.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
